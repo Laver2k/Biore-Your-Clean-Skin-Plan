@@ -1,0 +1,129 @@
+@import "normalize.scss";
+@import "boilerplate.scss";
+
+//Responsive Mixin
+@mixin min-em($width) {
+  @media screen and (min-width: $width + px ) {
+    @content; 
+  }
+}
+
+//Colour variables
+$lightBlue: #80b2df;
+$darkBlue:  #202856;
+$hotPink: #e8218a;
+$green: #65b632;
+
+
+//Fonts
+@font-face {
+  font-family: 'TrashHand';
+  src:  url('~/css/TrashHand.woff2') format('woff2'),
+        url('~/css/TrashHand.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'ArcherProBold';
+  src:  url('~/css/ArcherPro-Bold.woff2') format('woff2'),
+        url('~/css/ArcherPro-Bold.woff') format('woff');
+
+}
+
+@font-face {
+  font-family: 'ArcherProSemiBold';
+  src:  url('~/css/ArcherPro-Semibold.woff2') format('woff2'),
+        url('~/css/ArcherPro-Semibold.woff') format('woff');
+}
+
+
+body, div, p, form, input {
+	font-family: Arial;
+	color:#000;
+	font-weight:300;
+}
+
+body {
+  background-color:#fff;
+}
+
+
+/* general */
+img {
+  max-width:100%;
+}
+
+#app {
+  width:100%;
+}
+
+.section {
+
+  @include min-em(1050) {
+  width:1050px;
+  margin:0 auto;
+  }
+
+}
+
+.page {
+  width:100%;
+  text-align:center;
+  padding-top:70px;
+  padding-bottom:70px;
+  z-index:1;
+  min-height:70vh;
+  @include min-em(650) {
+    padding-top:220px;
+  }
+}
+
+.inner {
+  display: inline-block;
+  text-align:left;
+  width:90%;
+  padding:0 5%;
+  @include min-em(800) {
+    width:800px;
+    padding:0%;
+  }
+}
+
+.half {
+  width:100%;
+   @include min-em(600) {
+    width:50%;
+    float:left;
+    display:inline-block;
+  } 
+}
+
+.lightBg {
+  background: $lightBlue  url('~/img/backgrounds/bubble-background-light.png')  no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.lightBgSolid {
+  background: $lightBlue;
+}
+
+.whiteBg {
+  background: #fff  url('~/img/backgrounds/bubble-background-dark.png')  no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+
+/* Animations */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .25s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+
+#start-card, #page-q1 img, #page-q2 img, #page-q3 img, #page-q4 .circle, #print img, #print span, .email-button {
+  cursor:pointer;
+}
+

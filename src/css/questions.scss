@@ -1,0 +1,138 @@
+
+/* Question 1, 2 & 3 */
+
+#page-q1, #page-q2, #page-q3, {
+
+  .inner {
+    text-align:center;
+  }
+
+  .half.left {
+    padding:10px 20px;
+    box-sizing:border-box;
+    @include min-em(600) {
+     text-align:right;
+    }
+
+    img {
+      transition:transform 2s, opacity 2s; 
+
+      /*Animation*/
+      @include min-em(700) {  
+        transform: translateX(-50px);
+        opacity:0;
+      } 
+
+      &.animate {
+        @include min-em(700) {   
+        transform: translateX(-20px);
+         opacity:1;
+        }
+      }
+    }
+
+  }
+
+
+  .half.right{
+    padding:10px 20px;
+    box-sizing:border-box;  
+
+    @include min-em(600) {
+      text-align:left;
+    }
+
+    img {
+      transition:transform 2s, opacity 2s; 
+
+      /*Animation*/
+      @include min-em(700) {  
+        transform: translateX(50px);
+        opacity:0;
+      } 
+
+      &.animate {
+        @include min-em(700) {   
+        transform: translateX(-20px);
+         opacity:1;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+/* Question 4 */
+
+#circle-wrapper {
+  width:100%;
+  text-align:center;
+  display:inline-block;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px; 
+  background-color:$hotPink;
+  text-align:center;
+  margin:10px;
+  display: inline-block;
+
+  @include min-em(500) {
+    margin:20px;
+  }
+
+  transition:transform 1s, opacity 1s, background-color 0.5s; 
+
+  /*Animation*/
+  @include min-em(700) {  
+    transform: translateY(20px);
+    opacity:0;
+  } 
+
+  &.animate {
+    @include min-em(700) {   
+    transform: translateX(0px);
+     opacity:1;
+    }
+  }
+
+  &:hover {
+    background-color:lighten($hotPink, 20%);
+  }
+
+  span {
+    color:#fff;
+    verticle-align:middle;
+    padding: 50px 0;
+    display:block;
+    font-family:'ArcherProSemiBold';
+    font-size:20px;
+  }
+}
+
+
+/* misc */
+#page-q1 .inner h1, #page-q2 .inner h1 , #page-q3 .inner h1, #page-q4 .inner h1  {
+  font-family:'ArcherProSemiBold';
+  font-size:25px;
+  color:$darkBlue;
+  margin-bottom:20px;
+  text-align: center;
+  @include min-em(600) {
+    margin-bottom:40px;
+  }
+}
+
+
+
+
+
+
+
